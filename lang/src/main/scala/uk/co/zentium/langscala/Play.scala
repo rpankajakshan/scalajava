@@ -10,7 +10,7 @@ object Play extends App {
 
   def hasValidAttributeKeys(idType: String, attributes: Map[String, String]) =
     attributes.keys
-      .map(item => if (validKeyMap.keySet.contains(idType) && validKeyMap(idType).contains(item)) 0 else 1)
+      .map(item => if (validKeyMap.contains(idType) && validKeyMap(idType).contains(item)) 0 else 1)
       .sum == 0
 
 
