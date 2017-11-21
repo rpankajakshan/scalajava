@@ -5,7 +5,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class Play {
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+
+public class Succinct1 {
 
     private static Map<String, List<String>> validKeyMap = new HashMap<>();
 
@@ -34,9 +37,9 @@ public class Play {
     }
 
     public static void main(String[] args) {
-        assert (!hasValidAttributeKeys("uuid", map(new String[]{"who", "valsome"})));
-        assert (!hasValidAttributeKeys("uuid", map(new String[]{"src", "EDITORIAL"}, new String[]{"who", "valsome"})));
-        assert (hasValidAttributeKeys("uuid", map(new String[]{"src", "EDITORIAL"})));
+        assertFalse(hasValidAttributeKeys("uuid", map(new String[]{"who", "valsome"})));
+        assertFalse(hasValidAttributeKeys("uuid", map(new String[]{"src", "EDITORIAL"}, new String[]{"who", "valsome"})));
+        assertTrue(hasValidAttributeKeys("uuid", map(new String[]{"src", "EDITORIAL"})));
     }
 
     private static Map<String, String> map(String[]... pairs) {

@@ -26,8 +26,9 @@ object Dependencies {
 
   val testingJars: Seq[ModuleID] =
     Seq(
-      "org.scalatest" %% "scalatest" % "3.0.0" % Test,
-      "org.scalamock" %% "scalamock-scalatest-support" % "3.5.0" % Test,
+      "org.scalatest" %% "scalatest" % "3.0.0",
+      "org.scalamock" %% "scalamock-scalatest-support" % "3.5.0",
+      "org.hamcrest" % "hamcrest-junit" % "2.0.0.0"
     )
 
   val langDeps: Seq[Setting[_]] = deps(
@@ -41,7 +42,7 @@ object Dependencies {
       "com.softwaremill.macwire" %% "macrosakka" % "2.3.0",
       "com.softwaremill.macwire" %% "util" % "2.3.0",
       "com.softwaremill.macwire" %% "proxy" % "2.3.0"
-    ) ++ loggingJars  ++ testingJars
+    ) ++ loggingJars ++ testingJars
   )
 
   private def deps(modules: Seq[ModuleID]): Seq[Setting[_]] = Seq(libraryDependencies ++= modules)

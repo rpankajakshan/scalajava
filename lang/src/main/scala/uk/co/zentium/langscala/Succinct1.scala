@@ -1,6 +1,8 @@
 package uk.co.zentium.langscala
 
-object Play extends App {
+import org.scalatest.Matchers
+
+object Succinct1 extends App with Matchers {
 
   val validKeyMap = Map(
     "logo" -> List("src"),
@@ -14,7 +16,7 @@ object Play extends App {
       .sum == 0
 
 
-  assert(!hasValidAttributeKeys("uuid", Map("who" -> "valsome")))
-  assert(!hasValidAttributeKeys("uuid", Map("src" -> "EDITORIAL", "who" -> "valsome")))
-  assert(hasValidAttributeKeys("uuid", Map("src" -> "EDITORIAL")))
+  hasValidAttributeKeys("uuid", Map("who" -> "valsome")) should be(false)
+  hasValidAttributeKeys("uuid", Map("src" -> "EDITORIAL", "who" -> "valsome")) should be(false)
+  hasValidAttributeKeys("uuid", Map("src" -> "EDITORIAL")) should be(true)
 }
