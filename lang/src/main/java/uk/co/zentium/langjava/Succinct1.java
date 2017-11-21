@@ -32,13 +32,16 @@ public class Succinct1 {
 
         return attributes.keySet()
                 .stream()
-                .mapToLong(item -> validKeyMap.keySet().contains(idType) && validKeyMap.get(idType).contains(item) ? 0L : 1L)
+                .mapToLong(item ->
+                        validKeyMap.keySet().contains(idType)
+                                && validKeyMap.get(idType).contains(item) ? 0L : 1L)
                 .sum() == 0;
     }
 
     public static void main(String[] args) {
         assertFalse(hasValidAttributeKeys("uuid", map(new String[]{"who", "valsome"})));
-        assertFalse(hasValidAttributeKeys("uuid", map(new String[]{"src", "EDITORIAL"}, new String[]{"who", "valsome"})));
+        assertFalse(hasValidAttributeKeys("uuid", map(new String[]{"src", "EDITORIAL"},
+                new String[]{"who", "valsome"})));
         assertTrue(hasValidAttributeKeys("uuid", map(new String[]{"src", "EDITORIAL"})));
     }
 
