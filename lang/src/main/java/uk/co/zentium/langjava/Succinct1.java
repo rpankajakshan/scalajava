@@ -1,9 +1,6 @@
 package uk.co.zentium.langjava;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
@@ -13,19 +10,9 @@ public class Succinct1 {
     private static Map<String, List<String>> validKeyMap = new HashMap<>();
 
     static {
-        List<String> l = new ArrayList<>();
-        l.add("src");
-        validKeyMap.put("logo", l);
-
-        l = new ArrayList<>();
-        l.add("cgid");
-        l.add("src");
-        validKeyMap.put("uuid", l);
-
-        l = new ArrayList<>();
-        l.add("cgid");
-        l.add("src");
-        validKeyMap.put("pcms", l);
+        validKeyMap.put("logo", Arrays.asList("src"));
+        validKeyMap.put("uuid",  Arrays.asList("cgid", "src"));
+        validKeyMap.put("pcms", Arrays.asList("cgid", "src"));
     }
 
     private static Boolean hasValidAttributeKeys(String idType, Map<String, String> attributes) {

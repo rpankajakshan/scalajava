@@ -2,7 +2,7 @@ package uk.co.zentium.langjava;
 
 import static org.junit.Assert.assertEquals;
 
-public class Succinct3 {
+public class Fun1 {
 
     private interface Processor {
 
