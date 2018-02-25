@@ -2,7 +2,7 @@ package uk.co.zentium.langscala
 
 import org.scalatest.Matchers
 
-object Fun1 extends App with Matchers {
+object HigherOrderFun extends App with Matchers {
 
   def processRefresh() = process(refKey => "refresh processed")
 

@@ -2,7 +2,7 @@ package uk.co.zentium.langjava;
 
 import static org.junit.Assert.assertEquals;
 
-public class Fun1 {
+public class HigherOrderFun {
 
     private interface Processor {
 
