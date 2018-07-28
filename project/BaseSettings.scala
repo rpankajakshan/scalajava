@@ -27,7 +27,8 @@ object BaseSettings {
         "-Xfuture",
         "-language:postfixOps",
         "-language:implicitConversions",
-        "-language:reflectiveCalls"
+        "-language:reflectiveCalls",
+        "-Ypartial-unification"
       ),
       crossPaths := false,
       publishTo := Some("Pixel Nexus" at "http://nexus.epg.bskyb.com/nexus/content/repositories/releases"),
